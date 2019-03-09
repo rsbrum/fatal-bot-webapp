@@ -1,0 +1,62 @@
+.error{
+    background: rgba(255,148,148, 0.4) !important;
+    border: 1px solid rgb(255,148,148);
+    transition: 1s;
+    border-radius: 4px;
+}
+
+.blue-snackbar{
+    background: blue;
+}
+
+.success{
+    background: rgba(148, 255, 148, 0.4) !important;
+    border: 1px solid rgb(148, 255, 148);
+    transition: 1s;
+    border-radius: 4px;
+}
+
+.bg-white{
+    background: white;
+}
+.title {
+    font-family: 'Montserrat' ;
+    color: #162668;
+    font-size:48px;
+    font-weight:300;
+} 
+#toolbar {
+    background: #eceff1;
+    font-family: 'Montserrat', sans-serif !important;
+}
+.description{
+    color: #90a4ae;
+}
+
+.btn-fatal{
+    background-color: #162668;
+    border-radius: 4px;
+    color: white;
+    font-size: .75rem;
+    padding: .813rem 1.25rem;
+    text-decoration: none;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+#input{
+    padding: 8px;
+    border-radius: 10px; 
+}
+
+#input input{
+    border: none;
+    padding: 10px;
+    width: 90%;
+}
+
+#text{
+    width: 90%;
+    margin: auto;
+    
+}
