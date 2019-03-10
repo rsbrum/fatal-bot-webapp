@@ -86,14 +86,14 @@ export class ViewsComponent implements OnInit {
           this.apiError = false;
           this.openSnackBar();
           this.postForm.reset();
+          this.spinner = false;
         },
         err => {
           this.apiError = true;
           this.postForm.reset();
+          this.spinner = false;
         }
       );
-
-    this.spinner = false;
   }
 
   validateLink(link) {

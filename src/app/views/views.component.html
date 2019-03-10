@@ -51,7 +51,8 @@
             </div>
             <button *ngIf="!spinner" (click)="submitPost()" class="btn btn-fatal m-auto">CURTIR</button>
             <mat-spinner class="m-auto" [diameter]='30'
-              style="height: 15px !important; width: 15px !important; display: block;" *ngIf="spinner"></mat-spinner>
+              style="height: 15px !important; width: 15px !important; display: block;" *ngIf="spinner">
+            </mat-spinner>
           </div>
         </div>
       </div>
