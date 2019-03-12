@@ -1,65 +1,66 @@
-<mat-toolbar id="toolbar" class="shadow d-flex ">
+<div class="container-fluid">
+  <mat-toolbar id="toolbar" class="shadow d-flex ">
+    <span class="m-auto" style="color: #162668">FATAL<span style="color: #aa045b; font-weight: 700">LIKES </span></span>
+  </mat-toolbar>
 
-  <span class="m-auto" style="color: #162668">FATAL<span style="color: #aa045b; font-weight: 700">LIKES </span></span>
-</mat-toolbar>
-<div id="container-layout" style="height: 100%; width: 100%; " class="container-fluid">
 
-  <div class="container" [formGroup]="postForm">
-    <div class="row mt-3 p-4 justify-content-center">
-      <div class="col-8">
-        <div id="text">
-          <div class="title">
-            Cole o link de seu <span style='color: #aa045b; font-weight: 700;'>POST</span>
-          </div>
-          <div class="description">
-            <p>Cole o link do post desejado, escolha a quantidade de likes e aguarde entre 5-20 minutos!</p>
-          </div>
-        </div>
-
-        <div>
-          <div id="input" class="shadow mb-5 mt-2 bg-white" [ngClass]="{
-              'error' : !this.postForm.get('postLink').pristine && !this.validateLink(this.postForm.get('postLink').value),
-              'success' : !this.postForm.get('postLink').pristine && this.validateLink(this.postForm.get('postLink').value),
-              'error-1' : this.clicked && this.postForm.get('postLink').value == '',
-              'error-2' : this.invalidLink
-            }">
-            <input formControlName="postLink" style="color:#90a4ae; background: none;" placeholder="Enter email">
-          </div>
-        </div>
-
-        <div style="transition: 1s;"*ngIf="this.apiError" class="row">
-          <div class="col-12">
-            <div class="alert alert-danger" role="alert">
-              Ops! Alguma coisa deu errado! Tente novamente...
+    <div class="container" [formGroup]="postForm">
+      <div class="row mt-3 p-4 justify-content-center">
+        <div class="col-12 col-sm-12 col-md-10 col-lg-8" >
+          <div id="text">
+            <div class="title">
+              Cole o link de seu <span style='color: #aa045b; font-weight: 700;'>POST</span>
+            </div>
+            <div class="description">
+              <p>Cole o link do post desejado, escolha a quantidade de likes e aguarde entre 5-20 minutos!</p>
             </div>
           </div>
-        </div>
-
-        <div class="row">
-          <div class="col-12 d-flex">
-            <div [ngClass]="{
-                'error' : this.clicked && this.postForm.get('nCurtidas').value == 0,
-                'success': this.clicked && this.postForm.get('nCurtidas').value != 0
-               }">
-              <mat-form-field style="padding: 4px;">
-                <mat-select formControlName="nCurtidas" placeholder="Quantidade">
-                  <mat-option *ngFor="let curtida of nCurtidas" [value]="curtida">
-                    {{curtida}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
+  
+          <div>
+            <div id="input" class="shadow mb-5 mt-2 bg-white" [ngClass]="{
+                'error' : !this.postForm.get('postLink').pristine && !this.validateLink(this.postForm.get('postLink').value),
+                'success' : !this.postForm.get('postLink').pristine && this.validateLink(this.postForm.get('postLink').value),
+                'error-1' : this.clicked && this.postForm.get('postLink').value == '',
+                'error-2' : this.invalidLink
+              }">
+              <input formControlName="postLink" style="color:#90a4ae; background: none;" placeholder="Enter email">
             </div>
-            <button *ngIf="!spinner" (click)="submitPost()" class="btn btn-fatal m-auto">CURTIR</button>
-            <mat-spinner class="m-auto" [diameter]='30'
-              style="height: 15px !important; width: 15px !important; display: block;" *ngIf="spinner">
-            </mat-spinner>
+          </div>
+  
+          <div style="transition: 1s;"*ngIf="this.apiError" class="row">
+            <div class="col-12">
+              <div class="alert alert-danger" role="alert">
+                Ops! Alguma coisa deu errado! Tente novamente...
+              </div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col-12 d-flex">
+              <div class="m-2"[ngClass]="{
+                  'error' : this.clicked && this.postForm.get('nCurtidas').value == 0,
+                  'success': this.clicked && this.postForm.get('nCurtidas').value != 0
+                 }">
+                <mat-form-field style="padding: 4px;" >
+                  <mat-select formControlName="nCurtidas" placeholder="Quantidade">
+                    <mat-option *ngFor="let curtida of nCurtidas" [value]="curtida">
+                      {{curtida}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <button *ngIf="!spinner" (click)="submitPost()" class="btn btn-fatal m-auto">CURTIR</button>
+              <mat-spinner class="m-auto" [diameter]='30'
+                style="height: 15px !important; width: 15px !important; display: block;" *ngIf="spinner">
+              </mat-spinner>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  
+    <!-- <router-outlet></router-outlet> -->
 
-  <!-- <router-outlet></router-outlet> -->
 </div>
 
 <!-- 
