@@ -10,12 +10,12 @@ import { balancePreviousStylesIntoKeyframes } from '@angular/animations/browser/
 export class PostsService {
 
   apiUrl = environment.API_URL
-  console.log(apiUrl)
   constructor(private http: HttpClient) { }
   
   //check post
 
   postPost(postLink, nCurtidas) {
+    console.log(this.apiUrl)
     var json: any  = {
       'postLink' : postLink,
       'nCurtidas' : nCurtidas
