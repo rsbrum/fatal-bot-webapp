@@ -10,7 +10,7 @@ import { balancePreviousStylesIntoKeyframes } from '@angular/animations/browser/
 export class PostsService {
 
   apiUrl = environment.API_URL
-  
+  console.log(apiUrl)
   constructor(private http: HttpClient) { }
   
   //check post
