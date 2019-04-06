@@ -40,6 +40,7 @@ import {
   MatTreeModule,
 } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MainComponent } from './main/main.component';
 
 const VIEWS = [
     ViewsComponent,
@@ -89,7 +90,8 @@ const VIEWS = [
 
 ],
   declarations: [
-    ...VIEWS
+    ...VIEWS,
+    MainComponent
   ],
 })
 export class ViewsModule {
